@@ -1,0 +1,1 @@
+cd src/main/angular/EscaladaEveryday && npm run build
