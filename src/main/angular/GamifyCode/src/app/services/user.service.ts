@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import { UserDTO } from "../dto/UserDTO";
 import { Observable, of } from "rxjs/index";
 import { MessageService } from "./message.service";
-import {CONSTANTS} from "../util/Constants";
+import { URL_CONSTANTS } from "../util/URL_CONSTANTS";
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +15,12 @@ export class UserService {
 
   getUserListByRoleType(roleId: number) : Observable<UserDTO[]>{
     this.log("UserService: Fetching Users By Role");
-    return this.httpclient.get<UserDTO[]>(CONSTANTS.URL_RESOURCES.GET_USER_LIST_BY_ROLE_TYPE.URL);
+    return this.httpclient.get<UserDTO[]>(URL_CONSTANTS.GET_USER_LIST_BY_ROLE_TYPE.URL);
   }
 
   getUserById(userId: number) : Observable<UserDTO>{
     this.log("UserService: Fetching User By Id");
-    return this.httpclient.get<UserDTO>(CONSTANTS.URL_RESOURCES.GET_USER_BY_ID.URL);
+    return this.httpclient.get<UserDTO>(URL_CONSTANTS.GET_USER_BY_ID.URL);
   }
 
   private log(logMessage: string):void{

@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _util_Constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/Constants */ "./src/app/util/Constants.ts");
+/* harmony import */ var _util_Constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/Constants */ "./src/app/util/ROUTE_CONSTANTSS.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -51,7 +51,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(_util_Constants__WEBPACK_IMPORTED_MODULE_2__["CONSTANTS"].ROUTES)]
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(_util_Constants__WEBPACK_IMPORTED_MODULE_2__["ROUTE_CONSTANTS"].ROUTES)]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -398,7 +398,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message.service */ "./src/app/services/message.service.ts");
-/* harmony import */ var _util_Constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/Constants */ "./src/app/util/Constants.ts");
+/* harmony import */ var _util_Constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/Constants */ "./src/app/util/ROUTE_CONSTANTS.tss");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -419,11 +419,11 @@ var UserService = /** @class */ (function () {
     }
     UserService.prototype.getUserListByRoleType = function (roleId) {
         this.log("UserService: Fetching Users By Role");
-        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].URL_RESOURCES.GET_USER_LIST_BY_ROLE_TYPE.URL);
+        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["ROUTE_CONSTANTS"].URL_RESOURCES.GET_USER_LIST_BY_ROLE_TYPE.URL);
     };
     UserService.prototype.getUserById = function (userId) {
         this.log("UserService: Fetching User By Id");
-        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].URL_RESOURCES.GET_USER_BY_ID.URL);
+        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["ROUTE_CONSTANTS"].URL_RESOURCES.GET_USER_BY_ID.URL);
     };
     UserService.prototype.log = function (logMessage) {
         this.messageService.add(logMessage);
@@ -603,14 +603,14 @@ var UserManagementComponent = /** @class */ (function () {
 
 /***/ "./src/app/util/Constants.ts":
 /*!***********************************!*\
-  !*** ./src/app/util/Constants.ts ***!
+  !*** ./src/app/util/ROUTE_CONSTANTS.tss ***!
   \***********************************/
-/*! exports provided: CONSTANTS */
+/*! exports provided: ROUTE_CONSTANTS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONSTANTS", function() { return CONSTANTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ROUTE_CONSTANTS", function() { return CONSTANTS; });
 /* harmony import */ var _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../user-management/user-management.component */ "./src/app/user-management/user-management.component.ts");
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");

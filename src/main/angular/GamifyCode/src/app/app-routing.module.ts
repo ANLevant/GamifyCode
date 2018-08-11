@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import {CONSTANTS} from "./util/Constants";
+import { ROUTE_CONSTANTS } from "./util/ROUTE_CONSTANTS";
 
 @NgModule({
   exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(CONSTANTS.ROUTES) ]
+  imports: [ RouterModule.forRoot(ROUTE_CONSTANTS.ROUTES) ]
 })
 export class AppRoutingModule { }
