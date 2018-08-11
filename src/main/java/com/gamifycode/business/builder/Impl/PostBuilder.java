@@ -5,11 +5,14 @@ import com.gamifycode.business.dto.PostDTO;
 import com.gamifycode.persistence.model.PostEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class PostBuilder implements EntityDTOBuilder<PostEntity, PostDTO> {
 
     @Override
-    public PostEntity entityToDTO(PostDTO postDTO) {
+    public PostEntity dtoToEntity(PostDTO postDTO) {
 
         PostEntity postEntity = new PostEntity();
 
@@ -21,7 +24,7 @@ public class PostBuilder implements EntityDTOBuilder<PostEntity, PostDTO> {
     }
 
     @Override
-    public PostDTO DTOToEntity(PostEntity postEntity) {
+    public PostDTO entityToDTO(PostEntity postEntity) {
 
         PostDTO postDTO = new PostDTO();
 
@@ -30,5 +33,27 @@ public class PostBuilder implements EntityDTOBuilder<PostEntity, PostDTO> {
         postDTO.setTitle(postEntity.getTitle());
 
         return postDTO;
+    }
+
+    @Override
+    public List<PostEntity> dtoListToEntityList(List<PostDTO> PostDTOList) {
+        List<PostEntity> postEntities = new ArrayList<>();
+
+        for(PostDTO postDTO : PostDTOList){
+            postEntities.add(this.dtoToEntity(postDTO));
+        }
+
+        return postEntities;
+    }
+
+    @Override
+    public List<PostDTO> entityListToDTOList(List<PostEntity> PostEntityList) {
+        List<PostDTO> postDTOs = new ArrayList<>();
+
+        for(PostEntity postEntity : PostEntityList){
+            postDTOs.add(this.entityToDTO(postEntity));
+        }
+
+        return postDTOs;
     }
 }

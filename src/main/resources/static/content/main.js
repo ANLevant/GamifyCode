@@ -51,7 +51,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(_util_Constants__WEBPACK_IMPORTED_MODULE_2__["CONSTANTS"].routes)]
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(_util_Constants__WEBPACK_IMPORTED_MODULE_2__["CONSTANTS"].ROUTES)]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -235,7 +235,7 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.getUsers = function () {
         var _this = this;
-        this.userService.getUserListByRoleType(1).subscribe(function (users) { return _this.users = users; });
+        this.userService.GET_USER_LIST_BY_ROLE_TYPE(1).subscribe(function (users) { return _this.users = users; });
     };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -594,11 +594,11 @@ var UserManagementComponent = /** @class */ (function () {
         this.userService = userService;
     }
     UserManagementComponent.prototype.ngOnInit = function () {
-        this.getUserListByRoleType(0);
+        this.GET_USER_LIST_BY_ROLE_TYPE(0);
     };
     UserManagementComponent.prototype.getUserListByRoleType = function (roleType) {
         var _this = this;
-        this.userService.getUserListByRoleType(roleType).subscribe(function (users) { return _this.users = users; });
+        this.userService.GET_USER_LIST_BY_ROLE_TYPE(roleType).subscribe(function (users) { return _this.users = users; });
     };
     UserManagementComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -632,7 +632,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CONSTANTS = {
-    routes: [
+    ROUTES: [
         {
             path: "",
             redirectTo: "/dashboard",

@@ -22,6 +22,6 @@ public class RoleServiceImpl implements IRoleService {
     public RoleDTO getUserRole(UserDTO userToQueryRoleDTO) {
         RoleEntity roleFound = roleRepository.getOne(userToQueryRoleDTO.getRoleId());
 
-        return builder.DTOToEntity(roleFound);
+        return builder.entityToDTO(roleFound);
     }
 }

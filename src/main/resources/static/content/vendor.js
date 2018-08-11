@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
  * when they need to interact with the DOM apis like pushState, popState, etc...
  *
  * {@link LocationStrategy} in turn is used by the {@link Location} service which is used directly
- * by the {@link Router} in order to navigate between routes. Since all interactions between {@link
+ * by the {@link Router} in order to navigate between ROUTES. Since all interactions between {@link
  * Router} /
  * {@link Location} / {@link LocationStrategy} and DOM apis flow through the `PlatformLocation`
  * class they are all platform independent.
@@ -31323,21 +31323,21 @@ function makePropDecorator(name, props, parentClass) {
  *
  * ```typescript
  * // helper function inside the router
- * function provideRoutes(routes) {
+ * function provideRoutes(ROUTES) {
  *   return [
- *     {provide: ROUTES, useValue: routes},
- *     {provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: routes, multi: true}
+ *     {provide: ROUTES, useValue: ROUTES},
+ *     {provide: ANALYZE_FOR_ENTRY_COMPONENTS, useValue: ROUTES, multi: true}
  *   ];
  * }
  *
  * // user code
- * let routes = [
+ * let ROUTES = [
  *   {path: '/root', component: RootComp},
  *   {path: '/teams', component: TeamsComp}
  * ];
  *
  * @NgModule({
- *   providers: [provideRoutes(routes)]
+ *   providers: [provideRoutes(ROUTES)]
  * })
  * class ModuleWithRoutes {}
  * ```
@@ -58729,7 +58729,7 @@ var NavigationError = /** @class */ (function (_super) {
 /**
  * @description
  *
- * Represents an event triggered when routes are recognized.
+ * Represents an event triggered when ROUTES are recognized.
  *
  *
  */
@@ -59147,7 +59147,7 @@ function validateConfig(config, parentPath) {
 }
 function validateNode(route, fullPath) {
     if (!route) {
-        throw new Error("\n      Invalid configuration of route '" + fullPath + "': Encountered undefined route.\n      The reason might be an extra comma.\n\n      Example:\n      const routes: Routes = [\n        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },\n        { path: 'dashboard',  component: DashboardComponent },, << two commas\n        { path: 'detail/:id', component: HeroDetailComponent }\n      ];\n    ");
+        throw new Error("\n      Invalid configuration of route '" + fullPath + "': Encountered undefined route.\n      The reason might be an extra comma.\n\n      Example:\n      const ROUTES: Routes = [\n        { path: '', redirectTo: '/dashboard', pathMatch: 'full' },\n        { path: 'dashboard',  component: DashboardComponent },, << two commas\n        { path: 'detail/:id', component: HeroDetailComponent }\n      ];\n    ");
     }
     if (Array.isArray(route)) {
         throw new Error("Invalid configuration of route '" + fullPath + "': Array cannot be specified");
@@ -59175,7 +59175,7 @@ function validateNode(route, fullPath) {
         throw new Error("Invalid configuration of route '" + fullPath + "'. One of the following must be provided: component, redirectTo, children or loadChildren");
     }
     if (route.path === void 0 && route.matcher === void 0) {
-        throw new Error("Invalid configuration of route '" + fullPath + "': routes must have either a path or a matcher specified");
+        throw new Error("Invalid configuration of route '" + fullPath + "': ROUTES must have either a path or a matcher specified");
     }
     if (typeof route.path === 'string' && route.path.charAt(0) === '/') {
         throw new Error("Invalid configuration of route '" + fullPath + "': path cannot start with a slash");
@@ -59947,7 +59947,7 @@ var ApplyRedirects = /** @class */ (function () {
         }));
     };
     ApplyRedirects.prototype.noMatchError = function (e) {
-        return new Error("Cannot match any routes. URL Segment: '" + e.segmentGroup + "'");
+        return new Error("Cannot match any ROUTES. URL Segment: '" + e.segmentGroup + "'");
     };
     ApplyRedirects.prototype.createUrlTree = function (rootCandidate, queryParams, fragment) {
         var _a;
@@ -60054,7 +60054,7 @@ var ApplyRedirects = /** @class */ (function () {
         var childConfig$ = this.getChildConfig(ngModule, route);
         return childConfig$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(function (routerConfig) {
             var childModule = routerConfig.module;
-            var childConfig = routerConfig.routes;
+            var childConfig = routerConfig.ROUTES;
             var _a = split(rawSegmentGroup, consumedSegments, rawSlicedSegments, childConfig), segmentGroup = _a.segmentGroup, slicedSegments = _a.slicedSegments;
             if (slicedSegments.length === 0 && segmentGroup.hasChildren()) {
                 var expanded$_1 = _this.expandChildren(childModule, childConfig, segmentGroup);
@@ -60411,7 +60411,7 @@ function nodeChildrenAsMap(node) {
  *
  * Represents the state of the router.
  *
- * RouterState is a tree of activated routes. Every node in this tree knows about the "consumed" URL
+ * RouterState is a tree of activated ROUTES. Every node in this tree knows about the "consumed" URL
  * segments, the extracted parameters, and the resolved data.
  *
  * ### Example
@@ -60493,9 +60493,9 @@ var ActivatedRoute = /** @class */ (function () {
     url, 
     /** An observable of the matrix parameters scoped to this route */
     params, 
-    /** An observable of the query parameters shared by all the routes */
+    /** An observable of the query parameters shared by all the ROUTES */
     queryParams, 
-    /** An observable of the URL fragment shared by all the routes */
+    /** An observable of the URL fragment shared by all the ROUTES */
     fragment, 
     /** An observable of the static and resolved data of this route. */
     data, 
@@ -60640,9 +60640,9 @@ var ActivatedRouteSnapshot = /** @class */ (function () {
     url, 
     /** The matrix parameters scoped to this route */
     params, 
-    /** The query parameters shared by all the routes */
+    /** The query parameters shared by all the ROUTES */
     queryParams, 
-    /** The URL fragment shared by all the routes */
+    /** The URL fragment shared by all the ROUTES */
     fragment, 
     /** The static and resolved data of this route */
     data, 
@@ -61208,7 +61208,7 @@ var PreActivation = /** @class */ (function () {
     PreActivation.prototype.isDeactivating = function () { return this.canDeactivateChecks.length !== 0; };
     PreActivation.prototype.isActivating = function () { return this.canActivateChecks.length !== 0; };
     /**
-     * Iterates over child routes and calls recursive `setupRouteGuards` to get `this` instance in
+     * Iterates over child ROUTES and calls recursive `setupRouteGuards` to get `this` instance in
      * proper state to run `checkGuards()` method.
      */
     PreActivation.prototype.setupChildRouteGuards = function (futureNode, currNode, contexts, futurePath) {
@@ -61225,7 +61225,7 @@ var PreActivation = /** @class */ (function () {
         });
     };
     /**
-     * Iterates over child routes and calls recursive `setupRouteGuards` to get `this` instance in
+     * Iterates over child ROUTES and calls recursive `setupRouteGuards` to get `this` instance in
      * proper state to run `checkGuards()` method.
      */
     PreActivation.prototype.setupRouteGuards = function (futureNode, currNode, parentContexts, futurePath) {
@@ -61606,7 +61606,7 @@ function getChildConfig(route) {
         return route.children;
     }
     if (route.loadChildren) {
-        return route._loadedConfig.routes;
+        return route._loadedConfig.ROUTES;
     }
     return [];
 }
@@ -61761,7 +61761,7 @@ function getResolve(route) {
 /**
  * @description
  *
- * Provides a way to customize when activated routes get reused.
+ * Provides a way to customize when activated ROUTES get reused.
  *
  * @experimental
  */
@@ -61771,7 +61771,7 @@ var RouteReuseStrategy = /** @class */ (function () {
     return RouteReuseStrategy;
 }());
 /**
- * Does not detach any subtrees. Reuses routes as long as their route config is the same.
+ * Does not detach any subtrees. Reuses ROUTES as long as their route config is the same.
  */
 var DefaultRouteReuseStrategy = /** @class */ (function () {
     function DefaultRouteReuseStrategy() {
@@ -61954,10 +61954,10 @@ var Router = /** @class */ (function () {
         this.onSameUrlNavigation = 'ignore';
         /**
          * Defines how the router merges params, data and resolved data from parent to child
-         * routes. Available options are:
+         * ROUTES. Available options are:
          *
          * - `'emptyOnly'`, the default, only inherits parent params for path-less or component-less
-         *   routes.
+         *   ROUTES.
          * - `'always'`, enables unconditional inheritance of parent params.
          */
         this.paramsInheritanceStrategy = 'emptyOnly';
@@ -62396,7 +62396,7 @@ var Router = /** @class */ (function () {
         });
     };
     /**
-     * Performs the logic of activating routes. This is a synchronous process by default. While this
+     * Performs the logic of activating ROUTES. This is a synchronous process by default. While this
      * is a private method, it could be overridden to make activation asynchronous.
      */
     Router.prototype.activateRoutes = function (state, storedState, storedUrl, id, url, rawUrl, skipLocationChange, replaceUrl, resolvePromise, rejectPromise) {
@@ -62494,13 +62494,13 @@ var ActivateRoutes = /** @class */ (function () {
     ActivateRoutes.prototype.deactivateChildRoutes = function (futureNode, currNode, contexts) {
         var _this = this;
         var children = nodeChildrenAsMap(currNode);
-        // Recurse on the routes active in the future state to de-activate deeper children
+        // Recurse on the ROUTES active in the future state to de-activate deeper children
         futureNode.children.forEach(function (futureChild) {
             var childOutletName = futureChild.value.outlet;
             _this.deactivateRoutes(futureChild, children[childOutletName], contexts);
             delete children[childOutletName];
         });
-        // De-activate the routes that will not be re-used
+        // De-activate the ROUTES that will not be re-used
         forEach(children, function (v, childName) {
             _this.deactivateRouteAndItsChildren(v, contexts);
         });
@@ -62658,7 +62658,7 @@ function validateCommands(commands) {
 /**
  * @description
  *
- * Lets you link to specific routes in your app.
+ * Lets you link to specific ROUTES in your app.
  *
  * Consider the following route configuration:
  * `[{ path: 'user/:name', component: UserCmp }]`.
@@ -62811,7 +62811,7 @@ var RouterLink = /** @class */ (function () {
 /**
  * @description
  *
- * Lets you link to specific routes in your app.
+ * Lets you link to specific ROUTES in your app.
  *
  * See `RouterLink` for more information.
  *
@@ -63406,7 +63406,7 @@ var RouterPreloader = /** @class */ (function () {
                 // we already have the config loaded, just recurse
                 if (route.loadChildren && !route.canLoad && route._loadedConfig) {
                     var childConfig = route._loadedConfig;
-                    res.push(this.processRoutes(childConfig.module, childConfig.routes));
+                    res.push(this.processRoutes(childConfig.module, childConfig.ROUTES));
                     // no config loaded, fetch the config
                 }
                 else if (route.loadChildren && !route.canLoad) {
@@ -63433,7 +63433,7 @@ var RouterPreloader = /** @class */ (function () {
             var loaded$ = _this.loader.load(ngModule.injector, route);
             return loaded$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(function (config) {
                 route._loadedConfig = config;
-                return _this.processRoutes(config.module, config.routes);
+                return _this.processRoutes(config.module, config.ROUTES);
             }));
         });
     };
@@ -63594,9 +63594,9 @@ function routerNgProbeToken() {
  * That is why there are two ways to create the module: `RouterModule.forRoot` and
  * `RouterModule.forChild`.
  *
- * * `forRoot` creates a module that contains all the directives, the given routes, and the router
+ * * `forRoot` creates a module that contains all the directives, the given ROUTES, and the router
  *   service itself.
- * * `forChild` creates a module that contains all the directives and the given routes, but does not
+ * * `forChild` creates a module that contains all the directives and the given ROUTES, but does not
  *   include the router service.
  *
  * When registered at the root, the module should be used as follows
@@ -63653,7 +63653,7 @@ var RouterModule = /** @class */ (function () {
      * * `onSameUrlNavigation` configures how the router handles navigation to the current URL. See
      * `ExtraOptions` for more details.
      * * `paramsInheritanceStrategy` defines how the router merges params, data and resolved data
-     * from parent to child routes.
+     * from parent to child ROUTES.
      */
     RouterModule.forRoot = function (routes, config) {
         return {
@@ -63690,7 +63690,7 @@ var RouterModule = /** @class */ (function () {
         };
     };
     /**
-     * Creates a module with all the router directives and a provider registering routes.
+     * Creates a module with all the router directives and a provider registering ROUTES.
      */
     RouterModule.forChild = function (routes) {
         return { ngModule: RouterModule, providers: [provideRoutes(routes)] };
@@ -63729,7 +63729,7 @@ function provideForRootGuard(router) {
 /**
  * @description
  *
- * Registers routes.
+ * Registers ROUTES.
  *
  * ### Example
  *

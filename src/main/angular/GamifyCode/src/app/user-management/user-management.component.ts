@@ -16,11 +16,11 @@ export class UserManagementComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUserListByRoleType(0);
+    this.GET_USER_LIST_BY_ROLE_TYPE(0);
   }
 
   getUserListByRoleType(roleType : number) : void {
-    this.userService.getUserListByRoleType(roleType).subscribe(users=>this.users = users);
+    this.userService.GET_USER_LIST_BY_ROLE_TYPE(roleType).subscribe(users=>this.users = users);
   }
 
 }
