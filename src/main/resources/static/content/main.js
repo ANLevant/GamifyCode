@@ -132,12 +132,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-management/user-management.component */ "./src/app/user-management/user-management.component.ts");
-/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
-/* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/messages/messages.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-management/user-management.component */ "./src/app/user-management/user-management.component.ts");
+/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
+/* harmony import */ var _messages_messages_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./messages/messages.component */ "./src/app/messages/messages.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -153,25 +154,27 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_4__["UserManagementComponent"],
-                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_5__["UserDetailComponent"],
-                _messages_messages_component__WEBPACK_IMPORTED_MODULE_6__["MessagesComponent"],
-                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _user_management_user_management_component__WEBPACK_IMPORTED_MODULE_5__["UserManagementComponent"],
+                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_6__["UserDetailComponent"],
+                _messages_messages_component__WEBPACK_IMPORTED_MODULE_7__["MessagesComponent"],
+                _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -235,7 +238,7 @@ var DashboardComponent = /** @class */ (function () {
     };
     DashboardComponent.prototype.getUsers = function () {
         var _this = this;
-        this.userService.GET_USER_LIST_BY_ROLE_TYPE(1).subscribe(function (users) { return _this.users = users; });
+        this.userService.getUserListByRoleType(1).subscribe(function (users) { return _this.users = users; });
     };
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -393,9 +396,9 @@ var MessageService = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return UserService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/index */ "./node_modules/rxjs/index.js");
-/* harmony import */ var rxjs_index__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_index__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./message.service */ "./src/app/services/message.service.ts");
+/* harmony import */ var _util_Constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/Constants */ "./src/app/util/Constants.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -408,45 +411,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var UserService = /** @class */ (function () {
-    function UserService(messageService) {
+    function UserService(httpclient, messageService) {
+        this.httpclient = httpclient;
         this.messageService = messageService;
     }
-    UserService.prototype.getUserListByRoleType = function (roleType) {
-        this.messageService.add("UserService: Fetching Users By Role");
-        return Object(rxjs_index__WEBPACK_IMPORTED_MODULE_1__["of"])([{
-                id: 1,
-                roleId: 1,
-                username: 'admin',
-                name: 'demAdmin',
-                email: 'admin@email.com',
-                password: 'secret'
-            },
-            {
-                id: 2,
-                roleId: 1,
-                username: 'ANLevant',
-                name: 'LaSombra',
-                email: 'daboss@hidden.com',
-                password: 'SupaSecret'
-            }]);
+    UserService.prototype.getUserListByRoleType = function (roleId) {
+        this.log("UserService: Fetching Users By Role");
+        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].URL_RESOURCES.GET_USER_LIST_BY_ROLE_TYPE.URL);
     };
     UserService.prototype.getUserById = function (userId) {
-        this.messageService.add("UserService: Fetching User By Id");
-        return Object(rxjs_index__WEBPACK_IMPORTED_MODULE_1__["of"])({
-            id: 1,
-            roleId: 1,
-            username: 'admin',
-            name: 'demAdmin',
-            email: 'admin@email.com',
-            password: 'secret'
-        });
+        this.log("UserService: Fetching User By Id");
+        return this.httpclient.get(_util_Constants__WEBPACK_IMPORTED_MODULE_3__["CONSTANTS"].URL_RESOURCES.GET_USER_BY_ID.URL);
+    };
+    UserService.prototype.log = function (logMessage) {
+        this.messageService.add(logMessage);
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_message_service__WEBPACK_IMPORTED_MODULE_2__["MessageService"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _message_service__WEBPACK_IMPORTED_MODULE_2__["MessageService"]])
     ], UserService);
     return UserService;
 }());
@@ -473,7 +459,7 @@ module.exports = "label {\n  display: inline-block;\n  width: 3em;\n  margin: .5
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <button (click)=\"goBack()\">go back</button>\n\n  <h2>{{user.name | uppercase}} Details</h2>\n  <div> <span>id: </span> {{user.id}}</div>\n  <div> <label>name: </label>\n    <input [(ngModel)]=\"user.name\" placeholder=\"name\">\n  </div>\n</div>\n"
+module.exports = "<div *ngIf=\"user\">\n  <h2>{{user.name | uppercase}} Details</h2>\n  <div> <span>id: </span> {{user.id}}</div>\n  <div> <label>name: </label>\n    <input [(ngModel)]=\"user.name\" placeholder=\"name\">\n  </div>\n\n  <button (click)=\"goBack()\">back</button>\n</div>\n"
 
 /***/ }),
 
@@ -594,11 +580,11 @@ var UserManagementComponent = /** @class */ (function () {
         this.userService = userService;
     }
     UserManagementComponent.prototype.ngOnInit = function () {
-        this.GET_USER_LIST_BY_ROLE_TYPE(0);
+        this.getUserListByRoleType(0);
     };
     UserManagementComponent.prototype.getUserListByRoleType = function (roleType) {
         var _this = this;
-        this.userService.GET_USER_LIST_BY_ROLE_TYPE(roleType).subscribe(function (users) { return _this.users = users; });
+        this.userService.getUserListByRoleType(roleType).subscribe(function (users) { return _this.users = users; });
     };
     UserManagementComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -650,7 +636,13 @@ var CONSTANTS = {
             path: "dashboard",
             component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_1__["DashboardComponent"]
         }
-    ]
+    ],
+    URL_RESOURCES: {
+        GET_USER_LIST_BY_ROLE_TYPE: { URL: "localhost:8080/users/role/${roleId}", METHOD: "GET" },
+        GET_USER_BY_ID: { URL: "localhost:8080/users/user/${userId}", METHOD: "GET" },
+        LOG_USER: { URL: "localhost:8080/users/${username}/login", METHOD: "PUT" },
+        CREATE_USER: { URL: "localhost:8080/users", METHOD: "POST" }
+    }
 };
 
 
