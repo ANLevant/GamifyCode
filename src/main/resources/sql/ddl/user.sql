@@ -2,7 +2,7 @@
 
 -- DROP TABLE gamifycode.users;
 
-CREATE TABLE escaladaeveryday.users
+CREATE TABLE gamifycode.users
 (
   id_user integer NOT NULL,
   email character varying(255) NOT NULL,
@@ -16,5 +16,5 @@ CREATE TABLE escaladaeveryday.users
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE escaladaeveryday.users
+ALTER TABLE gamifycode.users
   OWNER TO postgres;

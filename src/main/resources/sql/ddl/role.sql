@@ -2,7 +2,7 @@
 
 -- DROP TABLE gamifycode.roles;
 
-CREATE TABLE escaladaeveryday.roles
+CREATE TABLE gamifycode.roles
 (
   id_role integer NOT NULL,
   role_name character varying(255) NOT NULL,
@@ -12,5 +12,5 @@ CREATE TABLE escaladaeveryday.roles
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE escaladaeveryday.roles
+ALTER TABLE gamifycode.roles
   OWNER TO postgres;

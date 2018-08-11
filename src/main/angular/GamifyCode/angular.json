@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "EscaladaEveryday": {
+    "GamifyCode": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -95,7 +95,7 @@
         }
       }
     },
-    "EscaladaEveryday-e2e": {
+    "GamifyCode-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {

@@ -23,8 +23,4 @@ export class UserManagementComponent implements OnInit {
     this.userService.getUserListByRoleType(roleType).subscribe(users=>this.users = users);
   }
 
-  onSelect(user: UserDTO){
-    this.selectedUser = user;
-  }
-
 }

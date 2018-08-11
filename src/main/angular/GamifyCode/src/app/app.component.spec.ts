@@ -13,15 +13,15 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'EscaladaEveryday'`, async(() => {
+  it(`should have as title 'GamifyCode'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('EscaladaEveryday');
+    expect(app.title).toEqual('GamifyCode');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to EscaladaEveryday!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to GamifyCode!');
   }));
 });

@@ -2,7 +2,7 @@
 
 -- DROP TABLE gamifycode.posts;
 
-CREATE TABLE escaladaeveryday.posts
+CREATE TABLE gamifycode.posts
 (
   id_post integer NOT NULL,
   content character varying(255) NOT NULL,
@@ -14,5 +14,5 @@ CREATE TABLE escaladaeveryday.posts
 WITH (
   OIDS=FALSE
 );
-ALTER TABLE escaladaeveryday.posts
+ALTER TABLE gamifycode.posts
   OWNER TO postgres;

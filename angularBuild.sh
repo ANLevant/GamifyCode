@@ -1,1 +1,1 @@
-cd src/main/angular/EscaladaEveryday && npm run build
+cd src/main/angular/GamifyCode && npm run build
