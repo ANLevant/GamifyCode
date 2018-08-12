@@ -9,6 +9,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdministrativeLayoutComponent } from './administrative-layout/administrative-layout.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UserDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    AdministrativeLayoutComponent,
   ],
   imports: [
     BrowserModule,
