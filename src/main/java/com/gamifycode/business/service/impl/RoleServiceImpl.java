@@ -9,6 +9,8 @@ import com.gamifycode.persistence.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleServiceImpl implements IRoleService {
 
@@ -22,6 +24,11 @@ public class RoleServiceImpl implements IRoleService {
     public RoleDTO getUserRole(UserDTO userToQueryRoleDTO) {
         RoleEntity roleFound = roleRepository.getOne(userToQueryRoleDTO.getRoleId());
 
-        return builder.DTOToEntity(roleFound);
+        return builder.entityToDTO(roleFound);
+    }
+
+    @Override
+    public List<RoleDTO> getAllRoles() {
+        return builder.entityListToDTOList(roleRepository.findAll());
     }
 }

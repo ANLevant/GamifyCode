@@ -19,7 +19,7 @@ public class PostServiceImpl implements IPostService {
 
     @Override
     public void addPost(PostDTO postToAddDTO) {
-        PostEntity postToAdd = builder.entityToDTO(postToAddDTO);
+        PostEntity postToAdd = builder.dtoToEntity(postToAddDTO);
         postRepository.save(postToAdd);
     }
 
@@ -27,6 +27,6 @@ public class PostServiceImpl implements IPostService {
     public PostDTO getPost(PostDTO postToFetchDTO) {
         PostEntity postFound = postRepository.getOne(postToFetchDTO.getIdPost());
 
-        return builder.DTOToEntity(postFound);
+        return builder.entityToDTO(postFound);
     }
 }

@@ -2,8 +2,8 @@ import {UserManagementComponent} from "../user-management/user-management.compon
 import {DashboardComponent} from "../dashboard/dashboard.component";
 import {UserDetailComponent} from "../user-detail/user-detail.component";
 
-export const CONSTANTS = {
-  routes : [
+export const ROUTE_CONSTANTS = {
+  ROUTES : [
     {
       path: "",
       redirectTo: "/dashboard",
@@ -20,5 +20,5 @@ export const CONSTANTS = {
     {
       path: "dashboard",
       component:  DashboardComponent
-    }]
+    }],
 }
