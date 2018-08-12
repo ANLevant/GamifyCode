@@ -28,12 +28,17 @@ public class UserController {
         return userService.logUser(userToLogDTO);
     }
 
-    @RequestMapping(path="{userId}", method = RequestMethod.GET)
+    @RequestMapping(path="/{userId}", method = RequestMethod.GET)
     public UserDTO userDetails(@PathVariable int userId){
         UserDTO userToSearchDTO = new UserDTO();
         userToSearchDTO.setIdUser(userId);
 
         return userService.getUserById(userToSearchDTO);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public List<UserDTO> getAllUsersList() {
+        return userService.getAllUsersList();
     }
 
     @RequestMapping(path="role/{roleId}", method = RequestMethod.GET)

@@ -12,4 +12,5 @@ public interface IUserService {
     UserDTO logUser(UserDTO userToLogDTO) throws LoginException;
     UserDTO getUserById(UserDTO userToSearchDTO);
     List<UserDTO> getUserListByRoleType(RoleDTO roleToSearchDTO);
+    List<UserDTO> getAllUsersList();
 }

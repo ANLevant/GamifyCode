@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
@@ -23,5 +25,10 @@ public class RoleController {
         userWithRoleToGet.setRoleId(roleId);
 
         return roleService.getUserRole(userWithRoleToGet);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public List<RoleDTO> getAllRoles() {
+        return roleService.getAllRoles();
     }
 }

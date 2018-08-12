@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO} from "../dto/UserDTO";
-import { UserService } from "../services/user.service";
+import { RoleDTO } from "../dto/RoleDTO";
+import { RoleService } from "../services/role.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,16 +9,16 @@ import { UserService } from "../services/user.service";
 })
 export class DashboardComponent implements OnInit {
 
-  users: UserDTO[];
+  roles: RoleDTO[];
 
-  constructor(private userService: UserService) { }
+  constructor(private roleService: RoleService) { }
 
   ngOnInit() {
     this.getUsers();
   }
 
   getUsers(): void{
-    this.userService.getUserListByRoleType(1).subscribe(users => this.users = users)
+    this.roleService.getAllRoles().subscribe(roles => this.roles = roles)
   }
 
 }

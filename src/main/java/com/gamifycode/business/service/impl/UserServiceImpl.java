@@ -51,4 +51,9 @@ public class UserServiceImpl implements IUserService {
     public List<UserDTO> getUserListByRoleType(RoleDTO roleToSearchDTO) {
         return builder.entityListToDTOList(userRepository.findByRole(roleToSearchDTO.getIdRole()));
     }
+
+    @Override
+    public List<UserDTO> getAllUsersList() {
+        return builder.entityListToDTOList(userRepository.findAll());
+    }
 }
