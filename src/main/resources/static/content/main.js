@@ -63,7 +63,7 @@ var AppRoutingModule = /** @class */ (function () {
 
 /***/ "./src/app/app.component.css":
 /*!***********************************!*\
-  !*** ./src/app/app.component.css ***!
+  !*** ./src/app/app.component.scss ***!
   \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -109,7 +109,7 @@ var AppComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+            styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         })
     ], AppComponent);
     return AppComponent;
@@ -186,7 +186,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ "./src/app/dashboard/dashboard.component.css":
 /*!***************************************************!*\
-  !*** ./src/app/dashboard/dashboard.component.css ***!
+  !*** ./src/app/dashboard/dashboard.component.scss ***!
   \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -244,7 +244,7 @@ var DashboardComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dashboard',
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/dashboard/dashboard.component.css")]
+            styles: [__webpack_require__(/*! ./dashboard.component.scss */ "./src/app/dashboard/dashboard.component.scss")]
         }),
         __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], DashboardComponent);
@@ -277,7 +277,7 @@ var UserDTO = /** @class */ (function () {
 
 /***/ "./src/app/messages/messages.component.css":
 /*!*************************************************!*\
-  !*** ./src/app/messages/messages.component.css ***!
+  !*** ./src/app/messages/messages.component.scss ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -330,7 +330,7 @@ var MessagesComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-messages',
             template: __webpack_require__(/*! ./messages.component.html */ "./src/app/messages/messages.component.html"),
-            styles: [__webpack_require__(/*! ./messages.component.css */ "./src/app/messages/messages.component.css")]
+            styles: [__webpack_require__(/*! ./messages.component.scss */ "./src/app/messages/messages.component.scss")]
         }),
         __metadata("design:paramtypes", [_services_message_service__WEBPACK_IMPORTED_MODULE_1__["MessageService"]])
     ], MessagesComponent);
@@ -443,7 +443,7 @@ var UserService = /** @class */ (function () {
 
 /***/ "./src/app/user-detail/user-detail.component.css":
 /*!*******************************************************!*\
-  !*** ./src/app/user-detail/user-detail.component.css ***!
+  !*** ./src/app/user-detail/user-detail.component.scss ***!
   \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -517,7 +517,7 @@ var UserDetailComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-user-detail',
             template: __webpack_require__(/*! ./user-detail.component.html */ "./src/app/user-detail/user-detail.component.html"),
-            styles: [__webpack_require__(/*! ./user-detail.component.css */ "./src/app/user-detail/user-detail.component.css")]
+            styles: [__webpack_require__(/*! ./user-detail.component.scss */ "./src/app/user-detail/user-detail.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
             _services_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"],
@@ -532,7 +532,7 @@ var UserDetailComponent = /** @class */ (function () {
 
 /***/ "./src/app/user-management/user-management.component.css":
 /*!***************************************************************!*\
-  !*** ./src/app/user-management/user-management.component.css ***!
+  !*** ./src/app/user-management/user-management.component.scss ***!
   \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -590,7 +590,7 @@ var UserManagementComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-user-management',
             template: __webpack_require__(/*! ./user-management.component.html */ "./src/app/user-management/user-management.component.html"),
-            styles: [__webpack_require__(/*! ./user-management.component.css */ "./src/app/user-management/user-management.component.css")]
+            styles: [__webpack_require__(/*! ./user-management.component.scss */ "./src/app/user-management/user-management.component.scss")]
         }),
         __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], UserManagementComponent);
