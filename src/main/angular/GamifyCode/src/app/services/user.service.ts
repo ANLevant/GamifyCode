@@ -15,12 +15,12 @@ export class UserService {
 
   getUserListByRoleType(roleId: number) : Observable<UserDTO[]>{
     this.log("UserService: Fetching Users By Role");
-    return this.httpclient.get<UserDTO[]>(URL_CONSTANTS.GET_USER_LIST_BY_ROLE_TYPE.URL);
+    return this.httpclient.get<UserDTO[]>(URL_CONSTANTS.GET_USER_LIST_BY_ROLE_TYPE.URL.replace(URL_CONSTANTS.GET_USER_LIST_BY_ROLE_TYPE.PARAMETERS_NAMES[0], ""+roleId));
   }
 
   getUserById(userId: number) : Observable<UserDTO>{
     this.log("UserService: Fetching User By Id");
-    return this.httpclient.get<UserDTO>(URL_CONSTANTS.GET_USER_BY_ID.URL);
+    return this.httpclient.get<UserDTO>(URL_CONSTANTS.GET_USER_BY_ID.URL.replace(URL_CONSTANTS.GET_USER_BY_ID.PARAMETERS_NAMES[0], ""+userId));
   }
 
   private log(logMessage: string):void{
