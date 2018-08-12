@@ -1,5 +1,5 @@
 export class UserDTO{
-  id: number;
+  idUser: number;
   roleId: number;
   username: string;
   name: string;
