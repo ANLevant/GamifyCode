@@ -4,6 +4,6 @@ import { ROUTE_CONSTANTS } from "./util/ROUTE_CONSTANTS";
 
 @NgModule({
   exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(ROUTE_CONSTANTS.ROUTES) ]
+  imports: [ RouterModule.forRoot(ROUTE_CONSTANTS.MAIN_ROUTES) ]
 })
 export class AppRoutingModule { }

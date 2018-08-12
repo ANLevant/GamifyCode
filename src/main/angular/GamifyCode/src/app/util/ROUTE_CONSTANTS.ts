@@ -4,12 +4,30 @@ import {UserDetailComponent} from "../user-detail/user-detail.component";
 import {AdministrativeLayoutComponent} from "../administrative-layout/administrative-layout.component";
 
 export const ROUTE_CONSTANTS = {
-  ROUTES : [
+  MAIN_ROUTES : [
     {
       path: "",
       redirectTo: "/administrative",
       pathMatch: "full"
     },
+    {
+      path: "administrative",
+      component: AdministrativeLayoutComponent,
+    },
+    {
+      path: "administrative/dashboard",
+      component: DashboardComponent
+    },
+    {
+      path: "administrative/users",
+      component: UserManagementComponent
+    },
+    {
+      path: "administrative/users/:id",
+      component: UserDetailComponent
+    }
+  ],
+  ADMINISTRATIVE_ROUTES: [
     {
       path: "administrative",
       component:  AdministrativeLayoutComponent,
@@ -27,5 +45,6 @@ export const ROUTE_CONSTANTS = {
           component: UserDetailComponent
         },
       ]
-    }],
+    }
+  ]
 }

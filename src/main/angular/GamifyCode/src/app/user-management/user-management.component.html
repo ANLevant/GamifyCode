@@ -1,7 +1,7 @@
 <h2>Registered Users</h2>
 <ul class="users">
   <li *ngFor="let user of users">
-    <a routerLink="/users/{{user.idUser}}">
+    <a routerLink="/administrative/users/{{user.idUser}}">
       <span class="badge">{{user.idUser}}</span> {{user.username}}
     </a>
   </li>
