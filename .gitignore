@@ -2,4 +2,4 @@
 *.ipr
 .*iws
 /.idea
-/src/main/resources/static/content*
+/src/main/resources/static/content/*
