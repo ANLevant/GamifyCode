@@ -21,6 +21,7 @@ public class UserBuilder implements EntityDTOBuilder<UserEntity, UserDTO> {
         userEntity.setName(userDTO.getName());
         userEntity.setPassword(userDTO.getPassword());
         userEntity.setUsername(userDTO.getUsername());
+        userEntity.setIdRole(userDTO.getRoleId());
 
         return userEntity;
     }
@@ -35,6 +36,7 @@ public class UserBuilder implements EntityDTOBuilder<UserEntity, UserDTO> {
         userDTO.setName(userEntity.getName());
         userDTO.setPassword(userEntity.getPassword());
         userDTO.setUsername(userEntity.getUsername());
+        userDTO.setRoleId(userEntity.getIdRole());
 
         return userDTO;
     }

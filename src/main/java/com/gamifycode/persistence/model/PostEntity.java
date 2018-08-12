@@ -11,6 +11,9 @@ public class PostEntity {
     @GeneratedValue
     private int idPost;
 
+    @Column(name = "ID_USER_POST")
+    private int idUser;
+
     @Column(name = "TITLE")
     private String title;
 
@@ -39,6 +42,14 @@ public class PostEntity {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 
     @Override

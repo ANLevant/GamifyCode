@@ -23,6 +23,9 @@ public class UserEntity {
     @Column(name = "EMAIL")
     private String email;
 
+    @Column(name = "ID_ROLE_USER")
+    private int idRole;
+
     public int getIdUser() {
         return idUser;
     }
@@ -61,6 +64,14 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getIdRole() {
+        return idRole;
+    }
+
+    public void setIdRole(int idRole) {
+        this.idRole = idRole;
     }
 
     @Override

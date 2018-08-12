@@ -6,6 +6,8 @@ public class PostDTO {
 
     private int idPost;
 
+    private int userId;
+
     private String title;
 
     private String content;
@@ -32,6 +34,14 @@ public class PostDTO {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Override
