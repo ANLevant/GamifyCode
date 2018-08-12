@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = "com.gamifycode.persistence.model")
 @EnableJpaRepositories(basePackages = "com.gamifycode.persistence.repository")
-@ComponentScan(basePackages = "com.gamifycode.business")
+@ComponentScan(basePackages = "com.gamifycode")
 public class GamifyCodeSpringApplication {
 
    public static void main(String[] args) {
