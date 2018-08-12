@@ -7,7 +7,7 @@
     "build": "ng build",
     "postbuild": "npm run deploy",
     "predeploy": "rimraf ../../resources/static/content && mkdirp  ../../resources/static/content",
-    "deploy": "cp -a dist/GamifyCode/. ../../resources/static/content && rm -r dist",
+    "deploy": "xcopy /e \"dist/GamifyCode\" \"../../resources/static/content\" && rmdir /q /s \"dist\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

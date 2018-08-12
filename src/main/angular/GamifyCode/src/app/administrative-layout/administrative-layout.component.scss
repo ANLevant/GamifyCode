@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+
+.administrationMenu {
+  padding: 0;
+  display:block;
+  clear:both;
+
+  .parent {
+    background:white;
+    padding:10px;
+  }
+}
+
+.nav {
+  display:table;
+  clear:both;
+  li {
+    float:left;
+    margin:0 5px;
+    position:relative;
+    a {
+      font-size:15px;
+      text-transform:capitalize;
+      font-family:arial;
+      padding: 10px;
+      color:black;
+      display: inline;
+      position:relative;
+      text-decoration:none;
+      position:relative;
+    }
+
+  }
+}
+
+.parent{
+  li:not(:first-child):before {
+    content: " | ";
+  }
+
+}
