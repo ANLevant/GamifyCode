@@ -59,8 +59,9 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>bash</executable>
-                            <commandlineArgs>angularBuild.sh</commandlineArgs>
+                            <!--executable>bash</executable>
+                             <commandlineArgs>angularBuild.sh</commandlineArgs-->
+                            <executable>angularBuild.bat</executable>
                         </configuration>
                     </execution>
                 </executions>
