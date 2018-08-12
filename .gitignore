@@ -3,3 +3,5 @@
 .*iws
 /.idea
 /src/main/resources/static/content/*
+/src/main/angular/GamifyCode/package.json
+pom.xml
