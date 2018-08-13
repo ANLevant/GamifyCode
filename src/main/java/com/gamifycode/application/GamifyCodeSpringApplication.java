@@ -16,4 +16,5 @@ public class GamifyCodeSpringApplication {
       SpringApplication.run(GamifyCodeSpringApplication.class, args);
    }
 
+
 }
