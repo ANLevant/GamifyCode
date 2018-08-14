@@ -1,4 +1,14 @@
 /* Application-wide Styles*/
+@import '~@angular/material/theming';
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+
+// always include only once per project
+@include mat-core();
+
+@import 'theme.scss';
+
+@include angular-material-theme($gamify-code-theme);
+
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +21,7 @@ h2, h3{
 }
 
 body{
-  margin: 2em;
+  margin: 0px;
 }
 
 body, input[text], button{

@@ -7,19 +7,31 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AdministrativeLayoutModule } from "./administrative-layout/administrative-layout.module";
+import { LeftSlideableMenuComponent } from './left-slideable-menu/left-slideable-menu.component';
+import {MatSidenavModule, MatToolbarModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
+    LeftSlideableMenuComponent,
+    TitleToolbarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AdministrativeLayoutModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
+  exports: [
+    MatSidenavModule,
+    MatToolbarModule],
   providers: [],
   bootstrap: [AppComponent]
 })
