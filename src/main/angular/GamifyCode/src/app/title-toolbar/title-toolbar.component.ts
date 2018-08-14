@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppComponent} from "../app.component";
+import {SideNavService} from "../services/side-nav.service";
 
 @Component({
   selector: 'app-title-toolbar',
@@ -9,9 +11,13 @@ export class TitleToolbarComponent implements OnInit {
 
   title = 'Gamify Code';
 
-  constructor() { }
+  constructor(private sidenavService : SideNavService) { }
 
   ngOnInit() {
+  }
+
+  toggle(){
+    this.sidenavService.toggle();
   }
 
 }

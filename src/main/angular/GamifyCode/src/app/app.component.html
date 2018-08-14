@@ -1,4 +1,8 @@
-<app-title-toolbar></app-title-toolbar>
-<app-left-slideable-menu></app-left-slideable-menu>
-<router-outlet></router-outlet>
-<!--app-messages></app-messages-->
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="over">Start content</mat-sidenav>
+  <mat-sidenav-content>
+    <app-title-toolbar></app-title-toolbar>
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
+  </mat-sidenav-content>
+</mat-sidenav-container>
