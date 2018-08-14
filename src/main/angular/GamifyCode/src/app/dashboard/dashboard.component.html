@@ -1,4 +1,4 @@
-<h3>User Roles</h3>
+<h3>User List Role Selection</h3>
 <div class="grid grid-pad">
   <a *ngFor="let role of roles" class="col-1-4" routerLink="/administrative/users" [queryParams]="{ roleId : role.idRole }" queryParamsHandling="merge">
     <div class="module user">
@@ -6,3 +6,7 @@
     </div>
   </a>
 </div>
+<h3>Statistics</h3>
+<div class="grid grid-pad">
+</div>
+
