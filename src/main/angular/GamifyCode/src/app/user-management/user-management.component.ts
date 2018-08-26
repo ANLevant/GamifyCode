@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { UserDTO } from "../dto/UserDTO";
 import { UserService } from "../services/user.service";
 import { MessageService } from "../services/message.service";
-import {Location} from "@angular/common";
-import {ActivatedRoute} from "@angular/router";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-user-management',
@@ -14,6 +13,11 @@ export class UserManagementComponent implements OnInit {
 
   users: UserDTO[];
   roleType: number;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  displayedColumns = ['id', 'name'];
 
   constructor(
     private userService : UserService,

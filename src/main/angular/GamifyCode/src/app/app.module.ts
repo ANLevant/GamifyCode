@@ -8,7 +8,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AdministrativeLayoutModule } from "./administrative-layout/administrative-layout.module";
 import { LeftSlideableMenuComponent } from './left-slideable-menu/left-slideable-menu.component';
-import {MatSidenavModule, MatToolbarModule} from "@angular/material";
+import {MatPaginatorModule, MatSidenavModule, MatSortModule, MatTableModule, MatToolbarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
 
@@ -17,7 +17,7 @@ import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
     AppComponent,
     MessagesComponent,
     LeftSlideableMenuComponent,
-    TitleToolbarComponent,
+    TitleToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -27,11 +27,17 @@ import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
     AppRoutingModule,
     HttpClientModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     MatSidenavModule,
-    MatToolbarModule],
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,],
   providers: [],
   bootstrap: [AppComponent]
 })
