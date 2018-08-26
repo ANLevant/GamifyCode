@@ -1,7 +1,14 @@
 <mat-sidenav-container class="container">
   <mat-sidenav #sidenav mode="over">
     <mat-toolbar color="primary"></mat-toolbar>
-    Test Content
+    <ul>
+      <li *ngFor="let menuItem of menu">
+        <a routerLink="{{menuItem.link}}" (click)="sidenav.toggle()">
+          <span class="badge">{{menuItem.id}}</span> {{menuItem.text}}
+          <mat-icon>{{menuItem.icon}}</mat-icon>
+        </a>
+      </li>
+    </ul>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-title-toolbar></app-title-toolbar>

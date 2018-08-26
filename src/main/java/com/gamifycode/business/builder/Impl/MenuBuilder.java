@@ -32,7 +32,7 @@ public class MenuBuilder extends EntityDTOBuilder<MenuEntity, MenuDTO> {
         MenuDTO.setLink(MenuEntity.getLink());
         MenuDTO.setIcon(MenuEntity.getIcon());
 
-        String[] stringRoles = MenuEntity.getIdRoleRestriction().replace("{", "").replace("}", "").split(",");
+        String[] stringRoles = MenuEntity.getIdRoleRestriction().replace("{", "").replace("}", "").replace("\"", "").split(",");
         Integer[] roles = new Integer[stringRoles.length];
 
         for(int i = 0; i < stringRoles.length; i++){
