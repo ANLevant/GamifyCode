@@ -21,4 +21,6 @@ WITH (
 ALTER TABLE gamifycode.users
   OWNER TO postgres;
 
+-- INSERT DATA
+
 INSERT INTO gamifycode.users (email, name, password, username, id_role_user) VALUES ('levant.alejandro@hotmail.com', 'Alejandro Serrano', 'Azakura1213', 'ANLevant', 1);

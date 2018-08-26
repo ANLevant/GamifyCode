@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class UserBuilder implements EntityDTOBuilder<UserEntity, UserDTO> {
+public class UserBuilder extends EntityDTOBuilder<UserEntity, UserDTO> {
 
     @Override
     public UserEntity dtoToEntity(UserDTO userDTO){
@@ -39,27 +39,5 @@ public class UserBuilder implements EntityDTOBuilder<UserEntity, UserDTO> {
         userDTO.setRoleId(userEntity.getIdRole());
 
         return userDTO;
-    }
-
-    @Override
-    public List<UserEntity> dtoListToEntityList(List<UserDTO> UserDTOList) {
-        List<UserEntity> userEntities = new ArrayList<>();
-
-        for(UserDTO userDTO : UserDTOList){
-            userEntities.add(this.dtoToEntity(userDTO));
-        }
-
-        return userEntities;
-    }
-
-    @Override
-    public List<UserDTO> entityListToDTOList(List<UserEntity> userEntityList) {
-        List<UserDTO> userDTOs = new ArrayList<>();
-
-        for(UserEntity postEntity : userEntityList){
-            userDTOs.add(this.entityToDTO(postEntity));
-        }
-
-        return userDTOs;
     }
 }
