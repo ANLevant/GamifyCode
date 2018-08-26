@@ -7,16 +7,15 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AdministrativeLayoutModule } from "./administrative-layout/administrative-layout.module";
-import { LeftSlideableMenuComponent } from './left-slideable-menu/left-slideable-menu.component';
-import {MatSidenavModule, MatToolbarModule} from "@angular/material";
+import {MatIcon, MatIconModule, MatMenuModule, MatSidenavModule, MatToolbarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
+import {SideNavService} from "./services/side-nav.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    LeftSlideableMenuComponent,
     TitleToolbarComponent,
   ],
   imports: [
@@ -27,12 +26,17 @@ import { TitleToolbarComponent } from './title-toolbar/title-toolbar.component';
     AppRoutingModule,
     HttpClientModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
   exports: [
     MatSidenavModule,
-    MatToolbarModule],
-  providers: [],
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
+  ],
+  providers: [SideNavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

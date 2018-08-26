@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class RoleBuilder implements EntityDTOBuilder<RoleEntity, RoleDTO> {
+public class RoleBuilder extends EntityDTOBuilder<RoleEntity, RoleDTO> {
 
     @Override
     public RoleEntity dtoToEntity(RoleDTO roleDTO){
@@ -31,21 +31,5 @@ public class RoleBuilder implements EntityDTOBuilder<RoleEntity, RoleDTO> {
         roleDTO.setRoleName(roleEntity.getRoleName());
 
         return roleDTO;
-    }
-
-    @Override
-    public List<RoleEntity> dtoListToEntityList(List<RoleDTO> roleDTOList) {
-        return null;
-    }
-
-    @Override
-    public List<RoleDTO> entityListToDTOList(List<RoleEntity> roleEntityList) {
-        List<RoleDTO> roleDTOs = new ArrayList<>();
-
-        for(RoleEntity postEntity : roleEntityList){
-            roleDTOs.add(this.entityToDTO(postEntity));
-        }
-
-        return roleDTOs;
     }
 }

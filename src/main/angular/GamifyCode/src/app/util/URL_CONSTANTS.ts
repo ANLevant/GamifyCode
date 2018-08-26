@@ -9,5 +9,8 @@ export const URL_CONSTANTS=
   },
   ROLES:{
     GET_ALL_ROLES:{URL:"http://localhost:8081/roles", METHOD:"GET"}
+  },
+  MENU:{
+    GET_MENU:{URL:"http://localhost:8081/menu/:roleId",METHOD:"GET", PARAMETERS_NAMES:[":roleId"]}
   }
 }
