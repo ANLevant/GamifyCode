@@ -14,19 +14,10 @@ import {UserDTO} from "./dto/UserDTO";
 })
 export class AppComponent {
 
-  @ViewChild('sidenav') public sidenav: MatSidenav;
-  menu : MenuDTO[];
-  loggedUser : UserDTO[];
-
-  constructor(private sidenavService: SideNavService, private menuService : MenuService, private messageService : MessageService) {
+  constructor(private messageService : MessageService) {
   }
 
   ngOnInit(): void {
-    this.sidenavService.setSidenav(this.sidenav);
-    this.menuService.refresh(1).subscribe(menu=>{
-      this.menu = menu;
-    });
-
   }
 
   private log(logMessage: string):void{

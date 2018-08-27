@@ -1,28 +1,67 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon color="accent">menu</mat-icon>
   </button>
   <div class="pageTitle">{{title}}</div>
 
   <div class = "userSection">
-    <button mat-button [matMenuTriggerFor]="menu" fxShow.lt-md="false" fxShow.gt-sm="true">
-      <mat-icon>account_circle</mat-icon>
+    <button mat-button [matMenuTriggerFor]="topMenu" fxShow.lt-md="false" fxShow.gt-sm="true">
+      <mat-icon color="accent">account_circle</mat-icon>
       <span class="ml-2">Account</span>
     </button>
-    <mat-menu #menu="matMenu" overlapTrigger="false">
+    <mat-menu #topMenu="matMenu" overlapTrigger="false">
       <button mat-menu-item>
-        <mat-icon>account_circle</mat-icon>
+        <mat-icon color="accent">account_circle</mat-icon>
         <span>My Account</span>
       </button>
       <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
+        <mat-icon color="accent">settings</mat-icon>
         <span>Settings</span>
       </button>
       <button mat-menu-item>
-        <mat-icon>money</mat-icon>
+        <mat-icon color="accent">money</mat-icon>
         <span>Billing</span>
       </button>
     </mat-menu>
-    <mat-icon class="ml-3" title="Logout">exit_to_app</mat-icon>
+    <mat-icon class="ml-3" title="Logout" color="primary">exit_to_app</mat-icon>
   </div>
 </mat-toolbar>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="over" class = "side-menu">
+
+    <ul *ngIf="menu">
+      <li *ngFor="let menuItem of menu" class="menu-item">
+        <a routerLink="{{menuItem.link}}" (click)="sidenav.toggle()">
+          <mat-icon color="accent">{{menuItem.icon}}</mat-icon>{{menuItem.text}}
+        </a>
+        <div class="hr-theme-slash-2">
+          <div class="hr-line"></div>
+        </div>
+      </li>
+    </ul>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <div class="menu-content">
+      <ul *ngIf="menu" class = "menu-thumbnail">
+        <li *ngFor="let menuItem of menu">
+          <a routerLink="{{menuItem.link}}">
+            <mat-icon color="accent">{{menuItem.icon}}</mat-icon>
+          </a>
+          <div class="hr-theme-slash-2">
+            <div class="hr-line"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<app-messages></app-messages>

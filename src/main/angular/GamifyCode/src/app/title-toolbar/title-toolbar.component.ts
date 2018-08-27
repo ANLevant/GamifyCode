@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {AppComponent} from "../app.component";
 import {SideNavService} from "../services/side-nav.service";
+import {MenuDTO} from "../dto/MenuDTO";
+import {UserDTO} from "../dto/UserDTO";
+import {MenuService} from "../services/menu.service";
+import {MessageService} from "../services/message.service";
 
 @Component({
   selector: 'app-title-toolbar',
@@ -9,15 +13,20 @@ import {SideNavService} from "../services/side-nav.service";
 })
 export class TitleToolbarComponent implements OnInit {
 
+  menu : MenuDTO[];
+  loggedUser : UserDTO[];
   title = 'Gamify Code';
 
-  constructor(private sidenavService : SideNavService) { }
+  constructor(private menuService : MenuService, private messageService : MessageService) { }
 
   ngOnInit() {
+    this.menuService.refresh(1).subscribe(menu=>{
+      this.menu = menu;
+    });
   }
 
-  toggle(){
-    this.sidenavService.toggle();
+  private log(logMessage: string):void{
+    this.messageService.add(logMessage);
   }
 
 }

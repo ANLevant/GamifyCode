@@ -1,13 +1,95 @@
 /* Application-wide Styles*/
+
+//Theme setup
+
 @import '~@angular/material/theming';
-/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+@import 'variables.scss';
 
 // always include only once per project
 @include mat-core();
 
 @import 'theme.scss';
-
 @include angular-material-theme($gamify-code-theme);
+
+
+// Define a custom mixin that takes in the current theme
+@mixin theme-color-grabber($theme) {
+  // Parse the theme and create variables for each color in the pallete
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $primary-lighter: map-get($theme, primary);
+  $accent-lighter: map-get($theme, accent);
+  $warn-lighter: map-get($theme, warn);
+  $primary-darker: map-get($theme, primary);
+  $accent-darker: map-get($theme, accent);
+  $warn-darker: map-get($theme, warn);
+
+  // Create theme specfic styles
+  .primary {
+    color: mat-color($primary);
+  }
+  .accent {
+    color: mat-color($accent);
+  }
+  .warn {
+    color: mat-color($warn);
+  }
+
+  .primary-lighter {
+    color: mat-color($primary-lighter);
+  }
+  .accent-lighter {
+    color: mat-color($accent-lighter);
+  }
+  .warn-lighter {
+    color: mat-color($warn-lighter);
+  }
+
+  .primary-darker {
+    color: mat-color($primary-darker);
+  }
+  .accent-darker {
+    color: mat-color($accent-darker);
+  }
+  .warn-darker {
+    color: mat-color($warn-darker);
+  }
+
+  .primaryBG {
+    background-color: mat-color($primary);
+  }
+  .accentBG {
+    background-color: mat-color($accent);
+  }
+  .warnBG {
+    background-color: mat-color($warn);
+  }
+
+  .primaryBG-lighter {
+    background-color: mat-color($primary-lighter);
+  }
+  .accentBG-lighter {
+    background-color: mat-color($accent-lighter);
+  }
+  .warnBG-lighter {
+    background-color: mat-color($warn-lighter);
+  }
+
+  .primaryBG-darker {
+    background-color: mat-color($primary-darker);
+  }
+  .accentBG-darker {
+    background-color: mat-color($accent-darker);
+  }
+  .warnBG-darker {
+    background-color: mat-color($warn-darker);
+  }
+}
+
+//Styles definition
+
+@include theme-color-grabber($gamify-code-theme);
 
 h1 {
   color: #369;
@@ -27,6 +109,19 @@ body{
 body, input[text], button{
   color: #888;
   font-family: Cambria, Georgia;
+}
+
+.hr-theme-slash-2 {
+  display: flex;
+
+  .hr-line {
+    width: 30%;
+    position: relative;
+    margin: 5px;
+    border-bottom: 1px solid #000;
+    padding-right: 100%;
+  }
+
 }
 
 

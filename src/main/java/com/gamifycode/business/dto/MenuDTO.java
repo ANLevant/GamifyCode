@@ -35,7 +35,7 @@ public class MenuDTO {
     }
 
     public String getIcon() {
-        return link;
+        return icon;
     }
 
     public void setIcon(String icon) {
