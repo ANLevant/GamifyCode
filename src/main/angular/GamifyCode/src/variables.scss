@@ -1,0 +1,14 @@
+// Import material theming functions
+@import '../node_modules/@angular/material/theming';
+@import 'theme.scss';
+
+// Copy the palettes from your selected theme (usually theme.scss).
+$primary: map-get($gamify-code-theme, primary);
+$accent: map-get($gamify-code-theme, accent);
+$warn: map-get($gamify-code-theme, warn);
+$primary-lighter: map-get($gamify-code-theme, primary);
+$accent-lighter: map-get($gamify-code-theme, accent);
+$warn-lighter: map-get($gamify-code-theme, warn);
+$primary-darker: map-get($gamify-code-theme, primary);
+$accent-darker: map-get($gamify-code-theme, accent);
+$warn-darker: map-get($gamify-code-theme, warn);

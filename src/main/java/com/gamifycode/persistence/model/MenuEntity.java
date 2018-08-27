@@ -45,7 +45,7 @@ public class MenuEntity {
     @Basic
     @Column(name = "icon_menu_item")
     public String getIcon() {
-        return link;
+        return icon;
     }
 
     public void setIcon(String icon) {

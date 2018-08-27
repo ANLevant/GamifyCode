@@ -5,13 +5,7 @@
 }
 
 .administrationMenu {
-  padding: 0;
-  display:block;
-  clear:both;
-
   .parent {
-    background:white;
-    padding:10px;
   }
 }
 
@@ -40,18 +34,6 @@
 .parent{
   li:not(:first-child):before {
     content: " | ";
-  }
-
-}
-
-.hr-theme-slash-2 {
-  display: flex;
-
-  .hr-line {
-    width: 30%;
-    position: relative;
-    margin: 5px;
-    border-bottom: 1px solid #000;
   }
 
 }
