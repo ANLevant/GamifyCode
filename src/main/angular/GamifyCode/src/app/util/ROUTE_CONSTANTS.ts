@@ -16,18 +16,15 @@ export const ROUTE_CONSTANTS = {
     },
     {
       path: "administrative/dashboard",
-      redirectTo: "/administrative",
-      pathMatch: "full"
+      redirectTo: "/administrative/dashboard"
     },
     {
       path: "administrative/users",
-      redirectTo: "/administrative",
-      pathMatch: "full"
+      redirectTo: "/administrative/users"
     },
     {
       path: "administrative/users/:id",
-      redirectTo: "/administrative",
-      pathMatch: "full"
+      redirectTo: "/administrative/users/:id"
     }
   ],
   ADMINISTRATIVE_ROUTES: [

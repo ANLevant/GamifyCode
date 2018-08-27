@@ -32,12 +32,32 @@ $mat-black: (
 );
 
 $my-theme-primary: mat-palette($mat-black, 900, 300, 600);
-$my-theme-accent: mat-palette($mat-amber, 300, 600, 900);
-$my-theme-warn: mat-palette($mat-deep-orange, 300, 600, 900);
+$my-theme-accent: mat-palette($mat-amber, 600, 300, 900);
+$my-theme-warn: mat-palette($mat-deep-orange, 600, 300, 900);
+
+$my-theme-lighter-primary: mat-palette($mat-black, 300, 600, 600);
+$my-theme-lighter-accent: mat-palette($mat-amber, 300, 600, 900);
+$my-theme-lighter-warn: mat-palette($mat-deep-orange, 300, 600, 900);
+
+$my-theme-darker-primary: mat-palette($mat-black, 900, 600, 300);
+$my-theme-darker-accent: mat-palette($mat-amber, 900, 600, 300);
+$my-theme-darker-warn: mat-palette($mat-deep-orange, 900, 600, 300);
 
 // create theme (use mat-dark-theme for themes with dark backgrounds)
 $gamify-code-theme: mat-light-theme(
     $my-theme-primary,
     $my-theme-accent,
     $my-theme-warn
+);
+
+$gamify-code-lighter-theme: mat-light-theme(
+    $my-theme-lighter-primary,
+    $my-theme-lighter-accent,
+    $my-theme-lighter-warn
+);
+
+$gamify-code-darker-theme: mat-light-theme(
+    $my-theme-darker-primary,
+    $my-theme-darker-accent,
+    $my-theme-darker-warn
 );

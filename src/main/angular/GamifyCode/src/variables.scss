@@ -6,9 +6,9 @@
 $primary: map-get($gamify-code-theme, primary);
 $accent: map-get($gamify-code-theme, accent);
 $warn: map-get($gamify-code-theme, warn);
-$primary-lighter: map-get($gamify-code-theme, primary);
-$accent-lighter: map-get($gamify-code-theme, accent);
-$warn-lighter: map-get($gamify-code-theme, warn);
-$primary-darker: map-get($gamify-code-theme, primary);
-$accent-darker: map-get($gamify-code-theme, accent);
-$warn-darker: map-get($gamify-code-theme, warn);
+$primary-lighter: map-get($gamify-code-lighter-theme, primary);
+$accent-lighter: map-get($gamify-code-lighter-theme, accent);
+$warn-lighter: map-get($gamify-code-lighter-theme, warn);
+$primary-darker: map-get($gamify-code-darker-theme, primary);
+$accent-darker: map-get($gamify-code-darker-theme, accent);
+$warn-darker: map-get($gamify-code-darker-theme, warn);

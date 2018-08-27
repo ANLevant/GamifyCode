@@ -1,4 +1,11 @@
 /*UserManagementComponent's private CSs Styles*/
+@import '~@angular/material/theming';
+@import '../../styles';
+@import '../../variables.scss';
+@import '../../theme.scss';
+
+@include theme-color-grabber($gamify-code-theme);
+
 .users {
   margin: 0 0 2em 0;
   list-style-type: none;
@@ -10,7 +17,7 @@
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
+  background-color: mat-color($accent);
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
@@ -24,7 +31,7 @@
 
 .users li:hover {
   color: #607D8B;
-  background-color: #DDD;
+  background-color: mat-color($accent-lighter);
   left: .1em;
 }
 
@@ -50,7 +57,7 @@
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
+  background-color: mat-color($warn);
   line-height: 1em;
   position: relative;
   left: -1px;
